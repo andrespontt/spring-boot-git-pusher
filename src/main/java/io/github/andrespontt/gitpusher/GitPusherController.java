@@ -1,5 +1,7 @@
 package io.github.andrespontt.gitpusher;
 
+import java.util.Properties;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +13,7 @@ public class GitPusherController {
     public Response apiTest(@PathVariable String param) {
         Response response = new Response();
         response.setMessage(param);
-        response.setValue(System.getProperty("GITHUB_TOKEN"));
+        response.setValue(System.getenv("GITHUB_TOKEN"));
         return response;
     }
 
