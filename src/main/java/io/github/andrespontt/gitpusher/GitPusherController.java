@@ -11,6 +11,7 @@ public class GitPusherController {
     public Response apiTest(@PathVariable String param) {
         Response response = new Response();
         response.setMessage(param);
+        response.setValue(System.getProperty("GITHUB_TOKEN"));
         return response;
     }
 
