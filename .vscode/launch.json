@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GitpusherApplication<gitpusher>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "io.github.andrespontt.gitpusher.GitpusherApplication",
+            "projectName": "gitpusher",
+            "args": ""
+        }
+    ]
+}
