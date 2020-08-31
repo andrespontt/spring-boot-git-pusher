@@ -67,4 +67,3 @@ secrets.yml
 .sts4-cache
 tmp/
 temp/
-.vscode/launch.json
