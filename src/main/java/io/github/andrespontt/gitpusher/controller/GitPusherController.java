@@ -1,21 +1,19 @@
-package io.github.andrespontt.gitpusher;
+package io.github.andrespontt.gitpusher.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.util.Properties;
 
 import org.apache.tomcat.util.http.fileupload.FileUtils;
-import org.eclipse.jgit.api.CheckoutCommand;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.InvalidRemoteException;
 import org.eclipse.jgit.api.errors.TransportException;
-import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import io.github.andrespontt.gitpusher.Response;
 
 @RestController
 public class GitPusherController {
