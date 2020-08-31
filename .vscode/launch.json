@@ -2,11 +2,18 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Spring Boot-GitpusherApplication<gitpusher>",
+            "name": "CodeLens (Launch) - GitPusherApplication",
+            "request": "launch",
+            "mainClass": "io.github.andrespontt.gitpusher.GitPusherApplication",
+            "projectName": "gitpusher"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GitPusherApplication<gitpusher>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
-            "mainClass": "io.github.andrespontt.gitpusher.GitpusherApplication",
+            "mainClass": "io.github.andrespontt.gitpusher.GitpPusherApplication",
             "projectName": "gitpusher",
             "args": ""
         }

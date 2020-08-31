@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GitpusherApplication {
+public class GitPusherApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GitpusherApplication.class, args);
+		SpringApplication.run(GitPusherApplication.class, args);
 	}
 
 }

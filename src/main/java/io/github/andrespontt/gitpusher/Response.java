@@ -1,9 +1,11 @@
 package io.github.andrespontt.gitpusher;
 
 public class Response {
+    
     private String message;
+    
     private String value;
-
+    
     public String getMessage() {
         return message;
     }
