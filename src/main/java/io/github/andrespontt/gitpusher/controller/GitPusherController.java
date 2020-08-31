@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,12 +28,12 @@ public class GitPusherController {
         return null;
     }
 
-    @GetMapping(value="/api/git/last-commit/{repo}")
-    public String showLastCommitDefault(@PathVariable String repo) throws InvalidRemoteException, TransportException, GitAPIException, IOException {
+    @GetMapping(value="/api/git/last-commit")
+    public String showLastCommitDefault(@RequestParam(name="repo") String repo) throws InvalidRemoteException, TransportException, GitAPIException, IOException {
         String repoName = getRepoName(repo);
+        log.info("Repo name: {}", repoName);
         final File directory = new File(repoName);
-        final String uri = "https://github.com/andrespontt/spring-boot-git-pusher.git";
-        final Git git = Git.cloneRepository().setURI(uri).setDirectory(directory).call();
+        final Git git = Git.cloneRepository().setURI(repo).setDirectory(directory).call();
         final RevCommit latestCommit = git.log().setMaxCount(1).call().iterator().next();
         final String latestCommitHash = latestCommit.getName();
         FileUtils.deleteDirectory(directory);
