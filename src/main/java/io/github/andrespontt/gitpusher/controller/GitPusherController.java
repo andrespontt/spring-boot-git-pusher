@@ -19,8 +19,8 @@ public class GitPusherController {
     public String showLastCommit() throws InvalidRemoteException, TransportException, GitAPIException, IOException {
         final File directory = new File("temp/");
         final String uri = "https://github.com/andrespontt/spring-boot-git-pusher.git";
-        Git git = Git.cloneRepository().setURI(uri).setDirectory(directory).call();
-       final RevCommit latestCommit = git.log().setMaxCount(1).call().iterator().next();
+        final Git git = Git.cloneRepository().setURI(uri).setDirectory(directory).call();
+        final RevCommit latestCommit = git.log().setMaxCount(1).call().iterator().next();
         final String latestCommitHash = latestCommit.getName();
         FileUtils.deleteDirectory(directory);
         return latestCommitHash;
