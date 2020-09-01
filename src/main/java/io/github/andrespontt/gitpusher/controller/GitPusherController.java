@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.github.andrespontt.gitpusher.Response;
+
 @RestController
 public class GitPusherController {
     
@@ -28,7 +30,7 @@ public class GitPusherController {
     }
 
     @GetMapping(value="/api/git/last-commit")
-    public String showLastCommitDefault(@RequestParam(name="repo") String repo) throws InvalidRemoteException, TransportException, GitAPIException, IOException {
+    public Response showLastCommitDefault(@RequestParam(name="repo") String repo) throws InvalidRemoteException, TransportException, GitAPIException, IOException {
         String repoName = getRepoName(repo);
         log.info("Repo name: {}", repoName);
         final File directory = new File(repoName);
@@ -37,7 +39,11 @@ public class GitPusherController {
         final String latestCommitHash = latestCommit.getName();
         FileUtils.deleteDirectory(directory);
         log.info("{}", git);
-        return latestCommitHash;
+        Response response = new Response();
+        response.setBranch("MASTER");
+        response.setRepo(repo);
+        response.setHash(latestCommitHash);
+        return response;
     }
     
 }

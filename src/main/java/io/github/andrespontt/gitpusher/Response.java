@@ -1,24 +1,35 @@
 package io.github.andrespontt.gitpusher;
 
 public class Response {
-    
-    private String message;
-    
-    private String value;
-    
-    public String getMessage() {
-        return message;
+
+    private String repo;
+    private String branch;
+    private String hash;
+
+    public String getRepo() {
+        return repo;
     }
 
-    public String getValue() {
-        return value;
+    public String getHash() {
+        return hash;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setHash(String hash) {
+        this.hash = hash;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public String getBranch() {
+        return branch;
     }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public void setRepo(String repo) {
+        this.repo = repo;
+    }
+    
+    
+  
 }
