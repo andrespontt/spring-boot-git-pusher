@@ -37,13 +37,13 @@ public class GitPusherController {
         final Git git = Git.cloneRepository().setURI(repo).setDirectory(directory).call();
         final RevCommit latestCommit = git.log().setMaxCount(1).call().iterator().next();
         final String latestCommitHash = latestCommit.getName();
-        FileUtils.deleteDirectory(directory);
-        log.info("{}", git);
         Response response = new Response();
         response.setBranch(git.getRepository().getBranch());
         response.setRepo(repo);
         response.setMessage(latestCommit.getFullMessage());
         response.setHash(latestCommitHash);
+        FileUtils.deleteDirectory(directory);
+        log.info("{}", git);
         return response;
     }
     
