@@ -5,9 +5,18 @@ public class Response {
     private String repo;
     private String branch;
     private String hash;
+    private String message;
 
     public String getRepo() {
         return repo;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getHash() {

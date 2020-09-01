@@ -42,6 +42,7 @@ public class GitPusherController {
         Response response = new Response();
         response.setBranch(git.getRepository().getBranch());
         response.setRepo(repo);
+        response.setMessage(latestCommit.getFullMessage());
         response.setHash(latestCommitHash);
         return response;
     }
