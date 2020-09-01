@@ -40,7 +40,7 @@ public class GitPusherController {
         FileUtils.deleteDirectory(directory);
         log.info("{}", git);
         Response response = new Response();
-        response.setBranch("MASTER");
+        response.setBranch(git.getRepository().getBranch());
         response.setRepo(repo);
         response.setHash(latestCommitHash);
         return response;
